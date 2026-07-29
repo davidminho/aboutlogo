@@ -16,7 +16,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: #fff;
-  font-family: "Google Sans", "Noto Sans Thai", "Thonburi", Arial, sans-serif;
+  font-family: "anugrom", "Noto Sans Thai", "Thonburi", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }

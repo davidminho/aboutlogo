@@ -25,6 +25,11 @@ export const revalidate = 60
 export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
     <html data-scroll-behavior="smooth" lang="th">
+      <head>
+        <link crossOrigin="anonymous" href="https://use.typekit.net" rel="preconnect" />
+        <link crossOrigin="anonymous" href="https://p.typekit.net" rel="preconnect" />
+        <link href="https://use.typekit.net/hvh3vlm.css" rel="stylesheet" />
+      </head>
       <body>
         <ScrollAnimations />
         <SiteHeader />
