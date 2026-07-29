@@ -140,30 +140,23 @@ h1, h2, h3, p { margin-top: 0; }
   right: 22px;
   bottom: 22px;
   left: 22px;
-  min-height: 46px;
-  padding: 10px 12px 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   color: #fff;
-  background: rgba(17,16,14,.72);
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 9px;
-  backdrop-filter: blur(10px);
+  text-shadow: 0 1px 8px rgba(0,0,0,.55);
 }
 .hero-slide-meta > span { overflow: hidden; font-size: 12px; letter-spacing: .35px; text-overflow: ellipsis; white-space: nowrap; }
 .hero-slide-meta > div { display: flex; align-items: center; gap: 10px; flex: none; }
 .hero-slide-meta small { color: rgba(255,255,255,.65); font-size: 10px; }
 .hero-slide-meta button {
-  width: 28px;
-  height: 28px;
   padding: 0;
   color: #fff;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.24);
-  border-radius: 50%;
+  background: transparent;
+  border: 0;
   cursor: pointer;
+  text-shadow: inherit;
 }
 .hero-slide-meta button:disabled { cursor: default; opacity: .55; }
 @keyframes hero-slide-zoom {
