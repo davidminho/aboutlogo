@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { FAQ } from '@/components/FAQ'
+import { HeroSlideshow } from '@/components/HeroSlideshow'
 import { Eyebrow, FinalCTA, ProjectCard } from '@/components/PageElements'
 import { LineButton } from '@/components/SiteFooter'
 import { portfolioProjects } from '@/lib/portfolio'
@@ -27,7 +27,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="hero-media">
-          <Image alt="ตัวอย่างงานออกแบบแบรนด์ About Logo" fill priority sizes="(max-width: 980px) 100vw, 54vw" src="/images/home-hero.png" />
+          <HeroSlideshow />
         </div>
         <div className="hero-offer">
           <div className="hero-price">
