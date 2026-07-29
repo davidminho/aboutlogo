@@ -18,18 +18,23 @@ export default function HomePage() {
   return (
     <>
       <section className="home-hero">
-        <div className="hero-media">
-          <Image alt="ตัวอย่างงานออกแบบแบรนด์ About Logo" fill priority sizes="100vw" src="/images/home-hero.png" />
-        </div>
-        <div className="hero-copy">
-          <h1>โลโก้และระบบแบรนด์<br />ที่ทำงานให้ธุรกิจของคุณ</h1>
+        <div className="hero-intro">
+          <span className="hero-eyebrow">LOGO · CORPORATE IDENTITY · BRANDING</span>
+          <h1>โลโก้และระบบแบรนด์ที่ทำงานให้ธุรกิจของคุณ</h1>
           <p>
             ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจที่พร้อมเติบโตและยกระดับสู่สากล
             ในราคาสมเหตุสมผลที่เจ้าของแบรนด์เข้าถึงได้ง่าย
           </p>
         </div>
+        <div className="hero-media">
+          <Image alt="ตัวอย่างงานออกแบบแบรนด์ About Logo" fill priority sizes="(max-width: 980px) 100vw, 54vw" src="/images/home-hero.png" />
+        </div>
         <div className="hero-offer">
-          <div><span>เริ่มต้นเพียง</span><strong>฿9,900</strong><span>/ แพ็กเกจแบบรอบเดียวจบ</span></div>
+          <div className="hero-price">
+            <span>แพ็กเกจแบบรอบเดียวจบ</span>
+            <strong>฿9,900</strong>
+            <small>ราคาเริ่มต้น · ระบุขอบเขตชัดเจน</small>
+          </div>
           <div className="button-row">
             <LineButton />
             <Link className="button button-outline" href="/portfolio">ชมผลงานที่ผ่านมา</Link>
