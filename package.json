@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "ci": "next build",
+    "ci": "payload generate:importmap && next build",
     "migrate": "payload migrate",
     "start": "next start",
     "lint": "eslint .",
