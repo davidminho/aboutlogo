@@ -28,7 +28,7 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
       <head>
         <link crossOrigin="anonymous" href="https://use.typekit.net" rel="preconnect" />
         <link crossOrigin="anonymous" href="https://p.typekit.net" rel="preconnect" />
-        <link href="https://use.typekit.net/hvh3vlm.css" rel="stylesheet" />
+        <link href="https://use.typekit.net/hvh3vlm.css?v=20260729-091545" rel="stylesheet" />
       </head>
       <body>
         <ScrollAnimations />
