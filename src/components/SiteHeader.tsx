@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 const nav = [
@@ -12,7 +13,14 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="wordmark" href="/" aria-label="aboutlogo.com หน้าแรก">
-        aboutlogo<span>.com</span>
+        <Image
+          alt=""
+          className="brand-logo"
+          height={144}
+          priority
+          src="/images/aboutlogo-horizontal.png"
+          width={611}
+        />
       </Link>
       <nav aria-label="เมนูหลัก">
         {nav.map((item) => (

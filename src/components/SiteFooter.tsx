@@ -24,8 +24,14 @@ export async function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-intro">
-          <Link className="wordmark wordmark-light" href="/">
-            aboutlogo<span>.com</span>
+          <Link aria-label="aboutlogo.com หน้าแรก" className="wordmark wordmark-light" href="/">
+            <Image
+              alt=""
+              className="brand-logo"
+              height={144}
+              src="/images/aboutlogo-horizontal.png"
+              width={611}
+            />
           </Link>
           <p>
             ระบบอัตลักษณ์ตราสินค้าและการออกแบบเชิงกลยุทธ์เพื่อ SME ไทย
