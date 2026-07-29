@@ -13,6 +13,9 @@ import { SiteSettings } from './src/globals/SiteSettings'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const databaseURL = (
+  process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5432/aboutlogo'
+).replace('sslmode=require', 'sslmode=verify-full')
 
 export default buildConfig({
   admin: {
@@ -27,8 +30,7 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'local-development-secret-change-before-production',
   db: postgresAdapter({
     pool: {
-      connectionString:
-        process.env.DATABASE_URL || 'postgresql://postgres:postgres@127.0.0.1:5432/aboutlogo',
+      connectionString: databaseURL,
     },
   }),
   plugins: [

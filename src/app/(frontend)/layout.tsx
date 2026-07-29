@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
+import { ScrollAnimations } from '@/components/ScrollAnimations'
 import '../globals.css'
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
   return (
     <html lang="th">
       <body>
+        <ScrollAnimations />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

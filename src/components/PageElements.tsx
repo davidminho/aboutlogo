@@ -19,7 +19,7 @@ export function FinalCTA({
   body?: string
 }) {
   return (
-    <section className="final-cta">
+    <section className="final-cta" data-reveal>
       <h2>{title}</h2>
       <p>{body}</p>
       <LineButton />

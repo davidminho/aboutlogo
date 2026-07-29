@@ -16,7 +16,7 @@ const process = [
 export default function HomePage() {
   return (
     <>
-      <section className="home-hero shell">
+      <section className="home-hero">
         <div className="hero-media">
           <Image alt="ตัวอย่างงานออกแบบแบรนด์ About Logo" fill priority sizes="100vw" src="/images/home-hero.png" />
         </div>
@@ -36,7 +36,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section shell">
+      <section className="section shell" data-reveal>
         <Eyebrow number="01">ผลงานบางส่วนที่เราภาคภูมิใจ</Eyebrow>
         <h2>Selected Works.</h2>
         <div className="home-gallery">
@@ -49,7 +49,7 @@ export default function HomePage() {
       </section>
 
       <section className="problem-section">
-        <div className="shell split">
+        <div className="shell split" data-reveal>
           <div>
             <Eyebrow number="02">ปัญหาที่เจ้าของแบรนด์มักเจอ</Eyebrow>
             <h2>แบรนด์ที่ดีไม่ได้เริ่มจากโลโก้สวย<br />แต่เริ่มจากการเข้าใจเนื้อแท้ของธุรกิจ</h2>
@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section shell package" id="package">
+      <section className="section shell package" data-reveal id="package">
         <Eyebrow number="03">แพ็กเกจแบบเบ็ดเสร็จ</Eyebrow>
         <div className="package-heading"><h2>The Single Package</h2><strong>฿9,900</strong></div>
         <p>ราคาแบบโปร่งใส ไม่มีค่าใช้จ่ายบานปลาย</p>
@@ -73,7 +73,7 @@ export default function HomePage() {
         <LineButton>ปรึกษาและจองสิทธิ์ผ่าน LINE</LineButton>
       </section>
 
-      <section className="section shell" id="process">
+      <section className="section shell" data-reveal id="process">
         <Eyebrow number="04">กระบวนการทำงาน</Eyebrow>
         <h2>The Studio Process</h2>
         <div className="process-grid">
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       <section className="why-section">
-        <div className="shell">
+        <div className="shell" data-reveal>
           <Eyebrow number="05">ทำไมต้อง aboutlogo.com</Eyebrow>
           <div className="why-list">
             <article><h3>เข้าใจธุรกิจอย่างถ่องแท้ก่อนเริ่มจรดพู่กัน</h3><p>เราวิเคราะห์ธุรกิจ การตลาด กลุ่มเป้าหมาย และคู่แข่ง ก่อนสกัดเป็นลายเส้น สี และรูปร่างที่ถูกต้องตามกลยุทธ์</p></article>
@@ -93,7 +93,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section shell faq-section">
+      <section className="section shell faq-section" data-reveal>
         <div><Eyebrow number="06">คำถามที่พบบ่อย</Eyebrow><h2>Questions &<br />Answers</h2></div>
         <FAQ />
       </section>
