@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Eyebrow } from '@/components/PageElements'
+import { getPublicSiteSettings } from '@/lib/cms'
 
 export const metadata: Metadata = { title: 'ติดต่อเรา' }
+export const revalidate = 60
 
 const prep = [
   ['ชื่อธุรกิจและประเภทอุตสาหกรรม', 'เพื่อประเมินคู่แข่งและสไตล์งานที่เหมาะสมกับสินค้าคุณ'],
@@ -10,7 +12,8 @@ const prep = [
   ['งบประมาณและกรอบเวลาส่งมอบ', 'เพื่อวางลำดับกระบวนการให้ทันการเปิดตัวอย่างสมบูรณ์แบบ'],
 ]
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getPublicSiteSettings()
   return (
     <section className="contact-page shell">
       <Eyebrow number="01">START YOUR JOURNEY</Eyebrow>
@@ -20,9 +23,9 @@ export default function ContactPage() {
           <h2>พร้อมเริ่มสร้างแบรนด์ที่แท้จริงของคุณแล้วหรือยัง?</h2>
           <p>เล่าเกี่ยวกับธุรกิจหรือไอเดียแบรนด์ของคุณให้เราฟังแบบย่อๆ หรือแจ้งโจทย์ที่ต้องการปรึกษา ทีมออกแบบของเรายินดีให้คำแนะนำเบื้องต้นโดยไม่มีค่าใช้จ่ายแอบแฝง</p>
           <dl className="contact-list">
-            <div><dt>LINE OFFICIAL ACCOUNT</dt><dd><a href="https://line.me/R/ti/p/@aboutlogo">@aboutlogo</a><a className="button button-line" href="https://line.me/R/ti/p/@aboutlogo">แอดไลน์ปรึกษาทันที</a></dd></div>
-            <div><dt>EMAIL INQUIRIES</dt><dd><a href="mailto:hello@aboutlogo.com">hello@aboutlogo.com</a></dd></div>
-            <div><dt>BUSINESS HOURS</dt><dd>จันทร์ - ศุกร์ (09:00 น. - 18:00 น.) *รอยืนยันเวลาทำการ</dd></div>
+            <div><dt>LINE OFFICIAL ACCOUNT</dt><dd><a href={settings.lineURL}>{settings.lineHandle}</a><a className="button button-line" href={settings.lineURL}>แอดไลน์ปรึกษาทันที</a></dd></div>
+            <div><dt>EMAIL INQUIRIES</dt><dd><a href={`mailto:${settings.email}`}>{settings.email}</a></dd></div>
+            <div><dt>BUSINESS HOURS</dt><dd>{settings.businessHours}</dd></div>
           </dl>
         </div>
         <aside className="contact-prep">

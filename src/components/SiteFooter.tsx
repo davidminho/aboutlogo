@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { getPublicSiteSettings } from '@/lib/cms'
 
-export function LineButton({ children = 'ปรึกษาทันทีผ่าน LINE' }: { children?: React.ReactNode }) {
+export async function LineButton({ children = 'ปรึกษาทันทีผ่าน LINE' }: { children?: React.ReactNode }) {
+  const settings = await getPublicSiteSettings()
   return (
     <a
       className="button button-line"
-      href="https://line.me/R/ti/p/@aboutlogo"
+      href={settings.lineURL}
       rel="noreferrer"
       target="_blank"
     >
@@ -16,7 +18,8 @@ export function LineButton({ children = 'ปรึกษาทันทีผ่
   )
 }
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const settings = await getPublicSiteSettings()
   return (
     <footer className="site-footer">
       <div className="footer-top">
@@ -39,9 +42,9 @@ export function SiteFooter() {
           </div>
           <div>
             <strong>การติดต่อสื่อสาร</strong>
-            <a href="https://line.me/R/ti/p/@aboutlogo">LINE: @aboutlogo</a>
-            <a href="mailto:hello@aboutlogo.com">Email: hello@aboutlogo.com</a>
-            <a href="https://facebook.com/aboutlogo">Socials: fb.com/aboutlogo</a>
+            <a href={settings.lineURL}>LINE: {settings.lineHandle}</a>
+            <a href={`mailto:${settings.email}`}>Email: {settings.email}</a>
+            <a href={settings.socialURL}>Socials: {settings.socialURL.replace(/^https?:\/\//, '')}</a>
           </div>
         </div>
       </div>
