@@ -24,7 +24,7 @@ export const revalidate = 60
 
 export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th">
+    <html data-scroll-behavior="smooth" lang="th">
       <body>
         <ScrollAnimations />
         <SiteHeader />

@@ -1,17 +1,31 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export function ScrollAnimations() {
-  useEffect(() => {
+  const pathname = usePathname()
+
+  useLayoutEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
     const revealElements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
     const heroMedia = document.querySelector<HTMLElement>('.hero-media')
+    const root = document.documentElement
 
-    if (reducedMotion.matches) {
+    if (reducedMotion.matches || !('IntersectionObserver' in window)) {
       revealElements.forEach((element) => element.classList.add('is-visible'))
+      root.classList.remove('reveal-ready')
       return
     }
+
+    const preloadBoundary = window.innerHeight + 160
+    revealElements.forEach((element) => {
+      const bounds = element.getBoundingClientRect()
+      if (bounds.top <= preloadBoundary && bounds.bottom >= -160) {
+        element.classList.add('is-visible')
+      }
+    })
+    root.classList.add('reveal-ready')
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -22,10 +36,12 @@ export function ScrollAnimations() {
           }
         })
       },
-      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 },
+      { rootMargin: '160px 0px 160px 0px', threshold: 0.01 },
     )
 
-    revealElements.forEach((element) => observer.observe(element))
+    revealElements.forEach((element) => {
+      if (!element.classList.contains('is-visible')) observer.observe(element)
+    })
 
     let frame = 0
     const updateHero = () => {
@@ -47,7 +63,7 @@ export function ScrollAnimations() {
       window.removeEventListener('scroll', onScroll)
       if (frame) window.cancelAnimationFrame(frame)
     }
-  }, [])
+  }, [pathname])
 
   return null
 }

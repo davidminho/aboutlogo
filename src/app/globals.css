@@ -177,35 +177,39 @@ h1, h2, h3, p { margin-top: 0; }
 .hero-price strong { grid-column: 2; grid-row: 1 / span 2; color: var(--accent); font-size: 48px; line-height: 1; font-weight: 400; }
 .hero-price small { color: var(--soft); font-size: 11px; }
 
-[data-reveal] {
+html.reveal-ready [data-reveal] {
   opacity: 0;
-  transform: translate3d(0, 42px, 0);
-  transition: opacity .75s cubic-bezier(.2,.65,.25,1), transform .75s cubic-bezier(.2,.65,.25,1);
+  transform: translate3d(0, 28px, 0);
 }
-[data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
-[data-reveal] .project-card,
-[data-reveal] .process-grid > div,
-[data-reveal] .why-list article {
-  opacity: 0;
-  transform: translate3d(0, 24px, 0);
-  transition: opacity .6s ease, transform .6s ease;
-}
-[data-reveal].is-visible .project-card,
-[data-reveal].is-visible .process-grid > div,
-[data-reveal].is-visible .why-list article {
+html.reveal-ready [data-reveal]:not(.is-visible) { will-change: opacity, transform; }
+html.reveal-ready [data-reveal].is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  transition: opacity .58s cubic-bezier(.2,.65,.25,1), transform .58s cubic-bezier(.2,.65,.25,1);
 }
-[data-reveal].is-visible .project-card:nth-child(2),
-[data-reveal].is-visible .process-grid > div:nth-child(2),
-[data-reveal].is-visible .why-list article:nth-child(2) { transition-delay: .09s; }
-[data-reveal].is-visible .project-card:nth-child(3),
-[data-reveal].is-visible .process-grid > div:nth-child(3),
-[data-reveal].is-visible .why-list article:nth-child(3) { transition-delay: .18s; }
-[data-reveal].is-visible .project-card:nth-child(4),
-[data-reveal].is-visible .process-grid > div:nth-child(4) { transition-delay: .27s; }
-[data-reveal].is-visible .process-grid > div:nth-child(5) { transition-delay: .36s; }
-[data-reveal].is-visible .process-grid > div:nth-child(6) { transition-delay: .45s; }
+html.reveal-ready [data-reveal] .project-card,
+html.reveal-ready [data-reveal] .process-grid > div,
+html.reveal-ready [data-reveal] .why-list article {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+html.reveal-ready [data-reveal].is-visible .project-card,
+html.reveal-ready [data-reveal].is-visible .process-grid > div,
+html.reveal-ready [data-reveal].is-visible .why-list article {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity .5s ease, transform .5s ease;
+}
+html.reveal-ready [data-reveal].is-visible .project-card:nth-child(2),
+html.reveal-ready [data-reveal].is-visible .process-grid > div:nth-child(2),
+html.reveal-ready [data-reveal].is-visible .why-list article:nth-child(2) { transition-delay: .07s; }
+html.reveal-ready [data-reveal].is-visible .project-card:nth-child(3),
+html.reveal-ready [data-reveal].is-visible .process-grid > div:nth-child(3),
+html.reveal-ready [data-reveal].is-visible .why-list article:nth-child(3) { transition-delay: .14s; }
+html.reveal-ready [data-reveal].is-visible .project-card:nth-child(4),
+html.reveal-ready [data-reveal].is-visible .process-grid > div:nth-child(4) { transition-delay: .21s; }
+html.reveal-ready [data-reveal].is-visible .process-grid > div:nth-child(5) { transition-delay: .28s; }
+html.reveal-ready [data-reveal].is-visible .process-grid > div:nth-child(6) { transition-delay: .35s; }
 
 .section { padding-block: 112px; }
 .section > h2, .about-page > h1, .page-hero h1 { font-size: clamp(44px, 5vw, 80px); line-height: 1.05; letter-spacing: -2px; font-weight: 400; }
