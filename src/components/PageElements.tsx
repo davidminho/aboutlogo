@@ -48,7 +48,7 @@ export function ProjectCard({
   return (
     <Link className={`project-card ${className}`} href={href}>
       <div className="project-image">
-        <Image alt="" fill priority={priority} sizes="(max-width: 760px) 100vw, 80vw" src={image} />
+        <Image alt={`ผลงานออกแบบแบรนด์ ${title}`} fill priority={priority} sizes="(max-width: 760px) 100vw, 50vw" src={image} />
       </div>
       <span>{meta}</span>
       <h3>{title}</h3>

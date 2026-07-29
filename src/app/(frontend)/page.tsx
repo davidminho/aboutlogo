@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FAQ } from '@/components/FAQ'
 import { Eyebrow, FinalCTA, ProjectCard } from '@/components/PageElements'
 import { LineButton } from '@/components/SiteFooter'
+import { portfolioProjects } from '@/lib/portfolio'
 
 const process = [
   ['01', 'ปรึกษาเบื้องต้น', 'วิเคราะห์ความต้องการ โครงสร้างงาน และทำความเข้าใจแกนธุรกิจหลัก'],
@@ -40,10 +41,16 @@ export default function HomePage() {
         <Eyebrow number="01">ผลงานบางส่วนที่เราภาคภูมิใจ</Eyebrow>
         <h2>Selected Works.</h2>
         <div className="home-gallery">
-          <ProjectCard priority className="wide" image="/images/home-work-1.png" meta="SKINCARE · BRAND IDENTITY SYSTEM · 2024" title="KLAER - เวชสำอางค์สกัดจากธรรมชาติ" />
-          <ProjectCard className="tall" image="/images/home-work-2.png" meta="F&B · PACKAGING & REBRANDING · 2024" title="GRAIN & GRIND - โรงคั่วกาแฟและคาเฟ่พรีเมียม" />
-          <ProjectCard image="/images/home-work-3.png" meta="CREATIVE STUDIO · LOGO DESIGN · 2023" title="VILLA ATELIER - สถาปนิกและนักออกแบบภายใน" />
-          <ProjectCard className="wide" image="/images/home-work-4.png" meta="TECH & LOGISTICS · BRAND GUIDELINES · 2024" title="NEXTPACE - ขนส่งด่วนอัจฉริยะในเมืองใหญ่" />
+          {portfolioProjects.slice(0, 4).map((project, index) => (
+            <ProjectCard
+              href={`/portfolio/${project.slug}`}
+              image={project.image}
+              key={project.slug}
+              meta={project.meta}
+              priority={index === 0}
+              title={project.title}
+            />
+          ))}
         </div>
         <Link className="text-link" href="/portfolio">ชมผลงานทั้งหมด →</Link>
       </section>
