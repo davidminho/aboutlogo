@@ -26,8 +26,10 @@ Custom. Tokens live in `src/app/tokens.css`.
 4pt named scale in `tokens.css`. Use `var(--space-*)`, never raw values.
 
 ## Motion
-- Image zoom on hover for work thumbnails only. No scroll reveals, no autoplay.
-- Easings `--ease-out`, `--ease-in`, `--ease-in-out`; reduced motion collapses to 150ms.
+- Hero and page heads rise in on load (staggered). Content below the fold rises in once as it reaches the viewport (`Reveal.tsx`); nothing loops or autoplays.
+- Hover: cards lift with a soft shadow, tile art shifts slightly, work thumbnails zoom.
+- Header is sticky with a blurred translucent background. FAQ answers ease open where the browser supports it.
+- Easings `--ease-out`, `--ease-in`, `--ease-in-out`; reduced motion turns all of it off.
 
 ## Components
 - Nav: white three-section bar (logo, links, LINE button). Below 60rem: logo + menu disclosure.

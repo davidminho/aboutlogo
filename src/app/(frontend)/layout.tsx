@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
 import { SiteFooter, StickyLine } from '@/components/SiteFooter'
+import { Reveal } from '@/components/Reveal'
 import { SiteHeader } from '@/components/SiteHeader'
 import '../globals.css'
 
@@ -41,6 +42,7 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} type="application/ld+json" />
+        <Reveal />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

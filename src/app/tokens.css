@@ -18,6 +18,10 @@
   --color-line-hover: oklch(46% 0.15 150);
   --color-on-line: oklch(99% 0.004 150);
   --color-focus: oklch(48% 0.12 255);
+  --color-glow: oklch(96% 0.035 60);
+  --color-paper-glass: oklch(99.2% 0.002 85 / 0.82);
+  --shadow-soft: 0 1px 2px oklch(21% 0.01 70 / 0.05), 0 18px 40px -18px oklch(21% 0.01 70 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(21% 0.01 70 / 0.06), 0 28px 56px -20px oklch(21% 0.01 70 / 0.26);
   --color-scrim: oklch(17% 0.008 70 / 0.72);
 
   /* type — brand face (Adobe Fonts) carries display and body; weights 400 / 700 only */
@@ -50,7 +54,8 @@
   --shell: 78rem;
 
   --radius-sm: 6px;
-  --radius-lg: 20px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
   --rule-hair: 1px;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -59,6 +64,7 @@
   --dur-micro: 120ms;
   --dur-short: 220ms;
   --dur-long: 420ms;
+  --dur-reveal: 800ms;
 
   --z-raised: 10;
   --z-dropdown: 100;

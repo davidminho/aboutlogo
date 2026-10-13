@@ -24,6 +24,7 @@ export default function HomePage() {
         <div className="shell hero-grid">
           <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
           <div className="hero-offer">
+            <span className="hero-label">แพ็กเกจโลโก้ + ชุด CI</span>
             <strong className="hero-price">{service.priceLabel}</strong>
             <p>
               ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจที่พร้อมเติบโต
