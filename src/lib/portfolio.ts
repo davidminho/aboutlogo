@@ -1,6 +1,8 @@
 import type { CMSProject } from './cms'
 
 export type PortfolioProject = CMSProject & {
+  // รูปเพิ่มเติมของเคส (โลโก้เดี่ยว ชุดสี หน้า Guidelines) วางไฟล์ใน public/images/portfolio แล้วใส่ path ที่นี่
+  gallery?: string[]
   orientation?: 'landscape' | 'portrait'
 }
 

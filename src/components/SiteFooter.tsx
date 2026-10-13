@@ -1,20 +1,32 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { getPublicSiteSettings } from '@/lib/cms'
+import { service, servicePath } from '@/lib/service'
+import { LineLink } from './LineLink'
 
-export async function LineButton({ children = 'ปรึกษาทันทีผ่าน LINE' }: { children?: React.ReactNode }) {
+export async function LineButton({
+  children = 'ปรึกษาผ่าน LINE',
+  placement = 'content',
+}: {
+  children?: React.ReactNode
+  placement?: string
+}) {
   const settings = await getPublicSiteSettings()
   return (
-    <a
-      className="button button-line"
-      href={settings.lineURL}
-      rel="noreferrer"
-      target="_blank"
-    >
+    <LineLink className="button button-line" href={settings.lineURL} placement={placement}>
       <Image alt="" height={16} src="/images/message-circle.svg" width={16} />
       {children}
-      <Image alt="" height={14} src="/images/arrow-right.svg" width={14} />
-    </a>
+    </LineLink>
+  )
+}
+
+export async function StickyLine() {
+  const settings = await getPublicSiteSettings()
+  return (
+    <aside aria-label="ติดต่อผ่าน LINE" className="sticky-line">
+      <span>โลโก้ + ชุด CI <strong>{service.priceLabel}</strong></span>
+      <LineLink className="button button-line" href={settings.lineURL} placement="sticky-bar">คุยทาง LINE</LineLink>
+    </aside>
   )
 }
 
@@ -22,40 +34,27 @@ export async function SiteFooter() {
   const settings = await getPublicSiteSettings()
   return (
     <footer className="site-footer">
-      <div className="footer-top">
-        <div className="footer-intro">
-          <Link aria-label="aboutlogo.com หน้าแรก" className="wordmark wordmark-light" href="/">
-            <Image
-              alt=""
-              className="brand-logo"
-              height={144}
-              src="/images/aboutlogo-horizontal.png"
-              width={611}
-            />
-          </Link>
-          <p>
-            ระบบอัตลักษณ์ตราสินค้าและการออกแบบเชิงกลยุทธ์เพื่อ SME ไทย
-            ยกระดับความน่าเชื่อถือ มุ่งหน้าสู่การขยายตัวอย่างไร้ขอบเขต
-          </p>
-        </div>
-        <div className="footer-links">
-          <div>
-            <strong>เมนูหลัก</strong>
-            <Link href="/portfolio">ชมผลงาน</Link>
-            <Link href="/#package">แพ็กเกจเดี่ยว</Link>
-            <Link href="/#process">ขั้นตอนทำงาน</Link>
-            <Link href="/about">เกี่ยวกับเรา</Link>
-          </div>
-          <div>
-            <strong>การติดต่อสื่อสาร</strong>
-            <a href={settings.lineURL}>LINE: {settings.lineHandle}</a>
-            <a href={`mailto:${settings.email}`}>Email: {settings.email}</a>
-            <a href={settings.socialURL}>Socials: {settings.socialURL.replace(/^https?:\/\//, '')}</a>
-          </div>
+      <div className="footer-mast">
+        <Link aria-label="aboutlogo.com หน้าแรก" className="footer-logo" href="/">
+          <Image alt="" height={144} src="/images/aboutlogo-horizontal.png" width={611} />
+        </Link>
+        <p>ออกแบบโลโก้และระบบอัตลักษณ์แบรนด์สำหรับ SME ไทย</p>
+      </div>
+      <div className="footer-rows">
+        <nav aria-label="เมนูส่วนท้าย">
+          <Link href={servicePath}>บริการ</Link>
+          <Link href="/portfolio">ผลงาน</Link>
+          <Link href="/about">เกี่ยวกับเรา</Link>
+          <Link href="/contact">ติดต่อ</Link>
+        </nav>
+        <div>
+          <LineLink href={settings.lineURL} placement="footer">LINE {settings.lineHandle}</LineLink>
+          <a href={`mailto:${settings.email}`}>{settings.email}</a>
+          <a href={settings.socialURL}>{settings.socialURL.replace(/^https?:\/\//, '')}</a>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} aboutlogo.com. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} aboutlogo.com</span>
         <span>
           <Link href="/privacy">Privacy Policy</Link>
           <Link href="/terms">Terms of Service</Link>

@@ -1,23 +1,32 @@
+import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { SiteFooter } from '@/components/SiteFooter'
+import { SiteFooter, StickyLine } from '@/components/SiteFooter'
 import { SiteHeader } from '@/components/SiteHeader'
-import { ScrollAnimations } from '@/components/ScrollAnimations'
 import '../globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aboutlogo.com'),
   title: {
-    default: 'aboutlogo.com — Logo & Brand Identity',
+    default: 'aboutlogo.com — ออกแบบโลโก้และ Corporate Identity สำหรับธุรกิจไทย',
     template: '%s — aboutlogo.com',
   },
-  description: 'ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจไทยที่พร้อมเติบโต',
+  description: 'ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจไทย แพ็กเกจโลโก้พร้อมชุด CI ราคา 9,900 บาท',
   openGraph: {
-    title: 'aboutlogo.com — Logo & Brand Identity',
-    description: 'โลโก้และระบบแบรนด์ที่ทำงานให้ธุรกิจของคุณ',
-    images: ['/images/home-hero.png'],
+    title: 'aboutlogo.com — ออกแบบโลโก้และ Corporate Identity สำหรับธุรกิจไทย',
+    description: 'โลโก้ ชุดสี ฟอนต์ นามบัตร เทมเพลตโซเชียล และ Brand Guidelines ในแพ็กเกจเดียว',
+    images: ['/images/portfolio/doi-luang.webp'],
+    siteName: 'aboutlogo.com',
     locale: 'th_TH',
     type: 'website',
   },
+}
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'aboutlogo.com',
+  url: 'https://aboutlogo.com',
+  logo: 'https://aboutlogo.com/images/aboutlogo-horizontal.png',
 }
 
 export const revalidate = 60
@@ -31,10 +40,12 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
         <link href="https://use.typekit.net/hvh3vlm.css?v=20260729-091545" rel="stylesheet" />
       </head>
       <body>
-        <ScrollAnimations />
+        <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} type="application/ld+json" />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <StickyLine />
+        <Analytics />
       </body>
     </html>
   )

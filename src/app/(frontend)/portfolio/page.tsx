@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
-import { Eyebrow, FinalCTA, ProjectCard } from '@/components/PageElements'
+import { FinalCTA, ProjectCard } from '@/components/PageElements'
 import { getPublicProjects } from '@/lib/cms'
 import { portfolioProjects } from '@/lib/portfolio'
 
-export const metadata: Metadata = { title: 'ผลงาน' }
+export const metadata: Metadata = {
+  title: 'ผลงานออกแบบโลโก้และ CI',
+  description: 'ผลงานออกแบบโลโก้ Corporate Identity และบรรจุภัณฑ์ของ aboutlogo.com สำหรับธุรกิจหลากหลายประเภท',
+  alternates: { canonical: '/portfolio' },
+}
 export const revalidate = 60
 
 export default async function PortfolioPage() {
@@ -15,15 +19,14 @@ export default async function PortfolioPage() {
 
   return (
     <>
-      <section className="page-hero shell">
-        <Eyebrow number="PORTFOLIO">คลังผลงานออกแบบ</Eyebrow>
-        <h1>ผลงานที่ผ่านมาของเรา</h1>
-        <p>ส่วนหนึ่งของความสำเร็จจากแบรนด์ที่ให้เราช่วยวางโครงสร้างระบบอัตลักษณ์ ค้นหาตัวตน และเปลี่ยนสัญญะทางธุรกิจให้เป็นเครื่องมือที่จับต้องได้จริง</p>
+      <section className="page-head shell">
+        <h1>ผลงานที่ผ่านมา</h1>
+        <p className="lede">แบรนด์ที่ให้เราช่วยวางระบบอัตลักษณ์ ตั้งแต่โลโก้ไปจนถึงสื่อที่ใช้งานจริง</p>
       </section>
-      <section className="portfolio-grid shell" data-reveal>
+      <section className="shell work-grid work-grid-all">
         {projects.map((project, index) => (
           <ProjectCard
-            className={'orientation' in project && project.orientation === 'landscape' ? 'portfolio-full portfolio-landscape' : ''}
+            className={'orientation' in project && project.orientation === 'landscape' ? 'is-landscape' : ''}
             href={`/portfolio/${project.slug}`}
             image={project.image}
             key={project.slug}
@@ -33,7 +36,7 @@ export default async function PortfolioPage() {
           />
         ))}
       </section>
-      <FinalCTA title="พร้อมสร้างแบรนด์ที่ทำงานแทนคุณแล้วหรือยัง?" body="ให้โลโก้และระบบแบรนด์ของคุณบอกเล่าความน่าเชื่อถือ มาร่วมสร้างภาพลักษณ์ระดับสากลไปด้วยกัน" />
+      <FinalCTA title="อยากได้งานแบบนี้ให้แบรนด์ของคุณ?" body="เล่าธุรกิจของคุณให้เราฟังทาง LINE แล้วเราจะแนะนำแนวทางที่เหมาะสม" />
     </>
   )
 }
