@@ -2,6 +2,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FAQ } from '@/components/FAQ'
+import { HeroLayered } from '@/components/HeroLayered'
 import { FinalCTA, PackageTerms, ProcessSteps, ProjectCard, SpecSheet, Testimonials } from '@/components/PageElements'
 import { LineButton } from '@/components/SiteFooter'
 import { portfolioProjects } from '@/lib/portfolio'
@@ -22,22 +23,22 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="shell hero-top">
-          <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
-          <div className="hero-cta">
-            <strong>{service.priceLabel}</strong>
-            <LineButton placement="hero" />
+        <div className="shell hero-entry">
+          <div className="hero-text">
+            <p className="hero-label">Logo · Corporate Identity · Branding</p>
+            <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
+            <p className="hero-line">แพ็กเกจเดียว {service.priceLabel}</p>
+            <p className="hero-story">
+              ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจที่พร้อมเติบโต
+              ในราคาที่เจ้าของแบรนด์เข้าถึงได้
+            </p>
+            <div className="button-row">
+              <LineButton placement="hero" />
+              <Link className="text-link" href={servicePath}>ดูรายละเอียดแพ็กเกจ →</Link>
+            </div>
           </div>
+          <HeroLayered slides={portfolioProjects.slice(0, 5).map(({ image, slug, title }) => ({ image, slug, title }))} />
         </div>
-        <ul className="hero-strip">
-          {portfolioProjects.slice(0, 5).map((project, index) => (
-            <li key={project.slug}>
-              <Link href={`/portfolio/${project.slug}`}>
-                <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill loading={index < 3 ? 'eager' : 'lazy'} preload={index < 3} sizes="(max-width: 640px) 62vw, (max-width: 960px) 34vw, 20vw" src={project.image} />
-              </Link>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="section shell package" id="package">

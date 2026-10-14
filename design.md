@@ -12,16 +12,17 @@ editorial
 - Case, about, contact, legal: pale page head, one split below.
 
 ## Theme
-Quiet modern luxury. Tokens live in `src/app/tokens.css`.
-- Monochrome only: white paper, near-black ink, neutral greys. No chromatic accent anywhere, including the LINE action (black button, inverts on hover).
-- Square corners, hairline rules instead of filled cards, generous whitespace.
-- Colour comes only from client work. Work images sit in greyscale and ease into colour on hover (desktop) or while passing the middle of the screen (touch). The single-case page shows the image in full colour.
+Shares its direction with loveluckybebe.com (Going Studio). Tokens live in `src/app/tokens.css`.
+- Ivory paper, linen bands, sand hairlines, taupe secondary text, warm ink. No chromatic accent.
+- Square corners, hairline rules, generous whitespace. One soft shadow, used only on the inset hero card.
+- Work images in listings sit in greyscale and ease into colour on hover (desktop) or mid-screen (touch). The hero and single-case images are full colour.
 
 ## Typography
-- Display and body: Helvetica Neue World (Adobe Fonts kit `hvh3vlm`), weights 400 and 700 only.
-- Display headings and the price are weight 400 with tight tracking. 700 is for h3, buttons and links.
-- Small labels are uppercase with wide tracking (`--tracking-label`).
-- No numbered eyebrows above section headings.
+- Jost (Latin) + Anuphan (Thai) via `next/font`, weights 300 / 400 / 500. Body is 300.
+- h1 is 300 with slight tracking; small labels are 11px uppercase with 0.22em tracking.
+
+## Hero
+Text left (label, headline, rule + price line, one paragraph, LINE button + text link). Right: a 4:5 work image with a smaller white-framed image overlapping its lower left, cross-fading through five projects, with a counter and progress rule (`HeroLayered.tsx`).
 
 ## Spacing
 4pt named scale in `tokens.css`. Use `var(--space-*)`, never raw values.
@@ -33,7 +34,7 @@ Quiet modern luxury. Tokens live in `src/app/tokens.css`.
 - Easings `--ease-out`, `--ease-in`, `--ease-in-out`; reduced motion turns all of it off.
 
 ## Components
-- Nav: white three-section bar (logo, links, LINE button). Below 60rem: logo + menu disclosure.
+- Nav: logo left, links right, LINE as an underlined link; hairline under the bar inset to the page width. Below 60rem: logo + menu disclosure.
 - Footer: Ft1 mast-headed on dark.
 - Primary action: filled LINE button. Secondary: text link with accent underline.
 - Sticky LINE bar with price on small screens.
