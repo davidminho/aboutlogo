@@ -64,7 +64,7 @@
   --dur-micro: 120ms;
   --dur-short: 220ms;
   --dur-long: 420ms;
-  --dur-reveal: 800ms;
+  --dur-reveal: 500ms;
 
   --z-raised: 10;
   --z-dropdown: 100;

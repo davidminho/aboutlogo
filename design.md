@@ -14,7 +14,7 @@ editorial
 Custom. Tokens live in `src/app/tokens.css`.
 - White paper `--color-paper` throughout; pale `--color-paper-2` for alternating bands, tiles and page heads.
 - Dark ink `--color-dark` only for the footer and the logo tile.
-- One colour family only: green. `--color-accent` for tile art and link underlines, `--color-accent-ink` for small labels. The price and step numbers are ink black.
+- Black, white and greys. Green appears only on the LINE action and as one swatch in the colour tile. The price and step numbers are ink black.
 - `--color-line` (LINE green, darkened for AA contrast with white text) is reserved for the LINE action.
 
 ## Typography
@@ -27,7 +27,7 @@ Custom. Tokens live in `src/app/tokens.css`.
 
 ## Motion
 - Hero and page heads rise in on load (staggered). Content below the fold rises in once as it reaches the viewport (`Reveal.tsx`); nothing loops or autoplays.
-- Hover: cards lift with a soft shadow, tile art shifts slightly, work thumbnails zoom.
+- Motion is deliberately quiet: short fades with a few pixels of travel, no lifts, no shadows. Work thumbnails zoom very slightly on hover.
 - Header is sticky with a blurred translucent background. FAQ answers ease open where the browser supports it.
 - Easings `--ease-out`, `--ease-in`, `--ease-in-out`; reduced motion turns all of it off.
 
