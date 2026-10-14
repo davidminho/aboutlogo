@@ -18,7 +18,7 @@ Shares its direction with loveluckybebe.com (Going Studio). Tokens live in `src/
 - Work images in listings sit in greyscale and ease into colour on hover (desktop) or mid-screen (touch). The hero and single-case images are full colour.
 
 ## Typography
-- Jost (Latin) + Anuphan (Thai) via `next/font`, weights 300 / 400 / 500. Body is 300.
+- Forma DJR Thai Text for all text, loaded from the Adobe Fonts kit `hvh3vlm` (weights 300 / 400 / 700). Body is 300.
 - h1 is 300 with slight tracking; small labels are 11px uppercase with 0.22em tracking.
 
 ## Hero

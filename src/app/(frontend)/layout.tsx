@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Anuphan, Jost } from 'next/font/google'
 import { SiteFooter, StickyLine } from '@/components/SiteFooter'
 import { Reveal } from '@/components/Reveal'
 import { SiteHeader } from '@/components/SiteHeader'
@@ -23,9 +22,6 @@ export const metadata: Metadata = {
   },
 }
 
-const jost = Jost({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-jost', display: 'swap' })
-const anuphan = Anuphan({ subsets: ['thai', 'latin'], weight: ['300', '400', '500'], variable: '--font-anuphan', display: 'swap' })
-
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -38,7 +34,12 @@ export const revalidate = 60
 
 export default function FrontendLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${jost.variable} ${anuphan.variable}`} data-scroll-behavior="smooth" lang="th">
+    <html data-scroll-behavior="smooth" lang="th">
+      <head>
+        <link crossOrigin="anonymous" href="https://use.typekit.net" rel="preconnect" />
+        <link crossOrigin="anonymous" href="https://p.typekit.net" rel="preconnect" />
+        <link href="https://use.typekit.net/hvh3vlm.css" rel="stylesheet" />
+      </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} type="application/ld+json" />
         <Reveal />

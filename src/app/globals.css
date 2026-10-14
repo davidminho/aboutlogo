@@ -1,6 +1,6 @@
 @import './tokens.css';
 /* Hallmark · genre: editorial · macrostructure: Bento Grid · design-system: design.md · designed-as-app
- * theme: custom · shared direction with loveluckybebe.com (Jost + Anuphan light · monochrome · hairlines · square corners) · enrichment: Tier-A CSS art tiles + client photography
+ * theme: custom · shared direction with loveluckybebe.com (Forma DJR Thai Text · monochrome · hairlines · square corners) · enrichment: Tier-A CSS art tiles + client photography
  * nav: N1b three-section · footer: Ft1 mast-headed
  * F1 bento knobs: tiles=7, spans=irregular, border=none · C4 sticky bar: always, viewport bottom
  * pre-emit critique: P4 H5 E4 S4 R4 V4
@@ -41,7 +41,7 @@ p { color: var(--color-ink-2); }
 
 .shell { width: min(var(--shell), 100% - 2 * var(--page-gutter)); margin-inline: auto; }
 .section { padding-block: var(--space-2xl); }
-h3 { font-weight: 500; }
+h3 { font-weight: 700; }
 .lede { font-size: var(--text-lg); line-height: 1.7; max-width: 34em; }
 .prose { display: grid; gap: var(--space-md); max-width: 38em; }
 .prose p { font-size: var(--text-lg); line-height: 1.7; }
@@ -57,7 +57,7 @@ h3 { font-weight: 500; }
   justify-content: center;
   gap: var(--space-xs);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 700;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.2;
@@ -70,7 +70,7 @@ h3 { font-weight: 500; }
   display: inline-block;
   text-decoration-skip-ink: none;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.02em;
   white-space: nowrap;
   text-decoration: underline;
@@ -113,7 +113,7 @@ h3 { font-weight: 500; }
   list-style: none;
   cursor: pointer;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 700;
 }
 .masthead-menu summary::-webkit-details-marker { display: none; }
 .masthead-menu div {
@@ -128,7 +128,7 @@ h3 { font-weight: 500; }
   border-radius: var(--radius-sm);
   display: grid;
 }
-.masthead-menu div a { min-height: 48px; display: flex; align-items: center; white-space: nowrap; font-weight: 500; }
+.masthead-menu div a { min-height: 48px; display: flex; align-items: center; white-space: nowrap; font-weight: 700; }
 .masthead-menu div a + a { border-top: var(--rule-hair) solid var(--color-rule); }
 
 /* ---------- hero ---------- */
@@ -281,7 +281,7 @@ h3 { font-weight: 500; }
 .contact-list { border-top: var(--rule-hair) solid var(--color-ink); }
 .contact-list > div { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); display: grid; gap: var(--space-2xs); }
 .contact-list dt { color: var(--color-soft); font-size: var(--text-xs); }
-.contact-list dd { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); font-size: var(--text-xl); font-weight: 500; }
+.contact-list dd { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); font-size: var(--text-xl); font-weight: 700; }
 .contact-body h2 { font-size: var(--text-xl); }
 .contact-body h2 + p { margin-block: var(--space-xs) var(--space-lg); }
 .legal { padding-block: var(--space-xl) var(--space-2xl); display: grid; gap: var(--space-md); }
@@ -292,7 +292,7 @@ h3 { font-weight: 500; }
 .case-text { display: grid; gap: var(--space-md); justify-items: start; }
 .case-text h1 { font-size: var(--text-display-s); }
 .case-text > p { font-size: var(--text-lg); line-height: 1.7; }
-.case-meta { color: var(--color-soft); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.04em; }
+.case-meta { color: var(--color-soft); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.04em; }
 .back-link { min-height: 44px; display: inline-flex; align-items: center; color: var(--color-ink-2); font-size: var(--text-sm); white-space: nowrap; }
 .case-next { padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); width: 100%; font-size: var(--text-sm); }
 
@@ -351,7 +351,7 @@ h3 { font-weight: 500; }
 .footer-rows { display: grid; gap: var(--space-md); padding-block: var(--space-md); border-block: var(--rule-hair) solid var(--color-dark-2); }
 .footer-rows nav, .footer-rows div, .footer-bottom span { display: flex; flex-wrap: wrap; gap: 0 var(--space-lg); }
 .footer-rows a, .footer-bottom a { min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; transition: color var(--dur-short) var(--ease-out); }
-.footer-rows nav a { color: var(--color-on-dark); font-weight: 500; }
+.footer-rows nav a { color: var(--color-on-dark); font-weight: 700; }
 .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 var(--space-lg); padding-top: var(--space-sm); font-size: var(--text-xs); }
 
 /* ---------- sticky LINE bar (small screens) ---------- */
