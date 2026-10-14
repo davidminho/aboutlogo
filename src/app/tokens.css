@@ -1,14 +1,14 @@
 /* Hallmark · design tokens · aboutlogo.com · design-system: design.md */
 :root {
-  /* colour — warm paper anchor (hue 80), single brown accent, LINE green for the primary action */
+  /* colour — white paper, warm-black ink, and one colour family: LINE green */
   --color-paper: oklch(99.2% 0.002 85);
   --color-paper-2: oklch(96.5% 0.005 85);
   --color-rule: oklch(90% 0.006 85);
   --color-soft: oklch(52% 0.012 80);
   --color-ink-2: oklch(40% 0.012 75);
   --color-ink: oklch(21% 0.01 70);
-  --color-accent: oklch(66% 0.2 40);
-  --color-accent-ink: oklch(50% 0.18 38);
+  --color-accent: oklch(64% 0.17 150);
+  --color-accent-ink: oklch(44% 0.13 150);
   --color-on-accent: oklch(17% 0.008 70);
   --color-dark: oklch(17% 0.008 70);
   --color-dark-2: oklch(27% 0.012 70);
@@ -18,7 +18,7 @@
   --color-line-hover: oklch(46% 0.15 150);
   --color-on-line: oklch(99% 0.004 150);
   --color-focus: oklch(48% 0.12 255);
-  --color-glow: oklch(96% 0.035 60);
+  --color-glow: oklch(96.5% 0.022 150);
   --color-paper-glass: oklch(99.2% 0.002 85 / 0.82);
   --shadow-soft: 0 1px 2px oklch(21% 0.01 70 / 0.05), 0 18px 40px -18px oklch(21% 0.01 70 / 0.18);
   --shadow-lift: 0 2px 4px oklch(21% 0.01 70 / 0.06), 0 28px 56px -20px oklch(21% 0.01 70 / 0.26);

@@ -14,7 +14,7 @@ editorial
 Custom. Tokens live in `src/app/tokens.css`.
 - White paper `--color-paper` throughout; pale `--color-paper-2` for alternating bands, tiles and page heads.
 - Dark ink `--color-dark` only for the footer and the logo tile.
-- Accent: vermilion `--color-accent` for the price and tile art; `--color-accent-ink` for small accent text on cream.
+- One colour family only: green. `--color-accent` for tile art and link underlines, `--color-accent-ink` for small labels. The price and step numbers are ink black.
 - `--color-line` (LINE green, darkened for AA contrast with white text) is reserved for the LINE action.
 
 ## Typography

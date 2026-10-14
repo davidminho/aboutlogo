@@ -1,6 +1,6 @@
 @import './tokens.css';
 /* Hallmark · genre: editorial · macrostructure: Bento Grid · design-system: design.md · designed-as-app
- * theme: custom (white paper · grotesk-sans · vermilion accent) · enrichment: Tier-A CSS art tiles + client photography
+ * theme: custom (white paper · grotesk-sans · green accent) · enrichment: Tier-A CSS art tiles + client photography
  * nav: N1b three-section · footer: Ft1 mast-headed
  * F1 bento knobs: tiles=7, spans=irregular, border=none · C4 sticky bar: always, viewport bottom
  * pre-emit critique: P4 H5 E4 S4 R4 V4
@@ -154,7 +154,7 @@ p { color: var(--color-ink-2); }
 .hero h1 span { display: inline-block; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
 .hero-offer { display: grid; gap: var(--space-md); justify-items: start; }
-.hero-price { color: var(--color-accent-ink); font-size: var(--text-price); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.hero-price { color: var(--color-ink); font-size: var(--text-price); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
 .hero-offer p { color: var(--color-ink-2); font-size: var(--text-lg); line-height: 1.65; max-width: 26em; }
 .hero-strip {
   margin-top: var(--space-xl);
@@ -197,7 +197,7 @@ p { color: var(--color-ink-2); }
 .art-colors i { flex: 1; }
 .art-colors i:nth-child(1) { background: var(--color-dark); }
 .art-colors i:nth-child(2) { background: var(--color-accent); }
-.art-colors i:nth-child(3) { background: var(--color-line); }
+.art-colors i:nth-child(3) { background: var(--color-glow); }
 .art-colors i:nth-child(4) { background: var(--color-rule); }
 .art-colors i:nth-child(5) { background: var(--color-soft); }
 .art-fonts { align-items: baseline; gap: var(--space-md); }
@@ -228,7 +228,7 @@ p { color: var(--color-ink-2); }
 /* ---------- steps ---------- */
 .steps { counter-reset: step; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
 .steps li { counter-increment: step; padding: var(--space-lg); border-radius: var(--radius-lg); background: var(--color-paper-2); display: grid; gap: var(--space-2xs); align-content: start; }
-.steps li::before { content: counter(step, decimal-leading-zero); margin-bottom: var(--space-sm); color: var(--color-accent-ink); font-size: var(--text-display-s); font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.steps li::before { content: counter(step, decimal-leading-zero); margin-bottom: var(--space-sm); color: var(--color-ink); font-size: var(--text-display-s); font-weight: 700; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .steps p { font-size: var(--text-sm); line-height: 1.65; }
 .band .steps li { background: var(--color-paper); }
 
@@ -341,7 +341,7 @@ p { color: var(--color-ink-2); }
   font-size: var(--text-xs);
   line-height: 1.3;
 }
-.sticky-line strong { display: block; color: var(--color-accent-ink); font-size: var(--text-xl); font-variant-numeric: tabular-nums; }
+.sticky-line strong { display: block; color: var(--color-ink); font-size: var(--text-xl); font-variant-numeric: tabular-nums; }
 .sticky-line .button { min-height: 44px; font-size: var(--text-sm); }
 
 /* ---------- 40rem ---------- */
