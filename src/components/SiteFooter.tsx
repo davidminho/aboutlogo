@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getPublicSiteSettings } from '@/lib/cms'
 import { service, servicePath } from '@/lib/service'
+import { storyPath } from '@/lib/story'
 import { LineLink } from './LineLink'
 
 export async function LineButton({
@@ -44,6 +45,7 @@ export async function SiteFooter() {
         <nav aria-label="เมนูส่วนท้าย">
           <Link href={servicePath}>บริการ</Link>
           <Link href="/portfolio">ผลงาน</Link>
+          <Link href={storyPath}>เรื่องเล่า</Link>
           <Link href="/about">เกี่ยวกับเรา</Link>
           <Link href="/contact">ติดต่อ</Link>
         </nav>

@@ -37,7 +37,7 @@ export function ProjectCard({ href, image, meta, title, className = '', priority
   return (
     <Link className={`project-card ${className}`} href={href}>
       <div className="project-image">
-        <Image alt={`ผลงานออกแบบแบรนด์ ${title}`} fill priority={priority} sizes="(max-width: 640px) 100vw, 50vw" src={image} />
+        <Image alt={`ผลงานออกแบบแบรนด์ ${title}`} fill loading={priority ? 'eager' : 'lazy'} preload={priority} sizes="(max-width: 640px) 100vw, 50vw" src={image} />
       </div>
       <h3>{title}</h3>
       <span>{meta}</span>

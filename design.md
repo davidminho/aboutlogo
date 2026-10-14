@@ -7,6 +7,7 @@ editorial
 
 ## Macrostructure family
 - Marketing pages (home, services/*): Bento Grid. White hero with the price, then the package shown as illustrated tiles, pale work band, numbered step cards, pale closing band.
+- Story (`/story`): magazine feature. Cover with issue line, oversized title, deck and contents list; numbered chapters on a 12-column grid that alternate between two-column text, text with image right, and image left; pull quotes and boxed side notes. Content lives in `src/lib/story.ts`.
 - Portfolio index: two-column grid with offset rows under a pale page head.
 - Case, about, contact, legal: pale page head, one split below.
 

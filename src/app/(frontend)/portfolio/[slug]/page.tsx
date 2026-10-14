@@ -41,7 +41,7 @@ export default async function CMSProjectPage({ params }: Props) {
     <>
       <article className={`case shell ${landscape ? 'case-landscape' : ''}`}>
         <div className={`figure-frame ${landscape ? 'landscape' : 'portrait'}`}>
-          <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill priority sizes="(max-width: 960px) 100vw, 55vw" src={project.image} />
+          <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill loading="eager" preload sizes="(max-width: 960px) 100vw, 55vw" src={project.image} />
         </div>
         <div className="case-text">
           <Link className="back-link" href="/portfolio">← ผลงานทั้งหมด</Link>

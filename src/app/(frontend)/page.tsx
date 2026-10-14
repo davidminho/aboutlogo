@@ -6,6 +6,7 @@ import { FinalCTA, PackageTerms, ProcessSteps, ProjectCard, SpecSheet, Testimoni
 import { LineButton } from '@/components/SiteFooter'
 import { portfolioProjects } from '@/lib/portfolio'
 import { service, servicePath } from '@/lib/service'
+import { story, storyPath } from '@/lib/story'
 
 export const metadata: Metadata = { alternates: { canonical: '/' } }
 
@@ -40,7 +41,7 @@ export default function HomePage() {
           {portfolioProjects.slice(0, 5).map((project, index) => (
             <li key={project.slug}>
               <Link href={`/portfolio/${project.slug}`}>
-                <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill priority={index < 3} sizes="(max-width: 640px) 60vw, 20vw" src={project.image} />
+                <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill loading={index < 3 ? 'eager' : 'lazy'} preload={index < 3} sizes="(max-width: 640px) 60vw, 20vw" src={project.image} />
               </Link>
             </li>
           ))}
@@ -106,6 +107,13 @@ export default function HomePage() {
             </figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="section shell story-teaser">
+        <p className="story-issue">{story.issue}</p>
+        <h2><Link href={storyPath}>{story.title}</Link></h2>
+        <p className="story-deck">{story.deck}</p>
+        <Link className="text-link" href={storyPath}>อ่านเรื่องเล่าการสร้างแบรนด์ →</Link>
       </section>
 
       <section className="section shell split split-even faq-section">

@@ -31,7 +31,7 @@ export default async function PortfolioPage() {
             image={project.image}
             key={project.slug}
             meta={project.meta}
-            priority={index === 0}
+            priority={index < 2}
             title={project.title}
           />
         ))}

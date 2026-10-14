@@ -6,7 +6,7 @@ import { useEffect, useLayoutEffect } from 'react'
 const targets = [
   '.section-head', '.bento > li', '.work-grid > a', '.steps > li', '.terms > div', '.quotes > li',
   '.split-text', '.split-figure', '.reasons > li', '.faq-list', '.final-cta-grid > *', '.plain-list',
-  '.prose', '.contact-list', '.case-text', '.case > .figure-frame', '.case-gallery > div', '.legal > *',
+  '.prose', '.contact-list', '.chapter-head', '.chapter-body', '.chapter-note', '.pull-quote', '.story-figure', '.story-teaser > *', '.case-text', '.case > .figure-frame', '.case-gallery > div', '.legal > *',
 ].join(',')
 
 const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect
@@ -29,7 +29,7 @@ export function Reveal() {
 
     // touch screens have no hover, so work images take their colour while they pass the middle of the screen
     const toned = window.matchMedia('(hover: none)').matches
-      ? Array.from(document.querySelectorAll<HTMLElement>('.hero-strip li, .project-card, .split-figure'))
+      ? Array.from(document.querySelectorAll<HTMLElement>('.hero-strip li, .project-card, .split-figure, .story-figure'))
       : []
     const tone = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.target.classList.toggle('is-color', entry.isIntersecting)),
