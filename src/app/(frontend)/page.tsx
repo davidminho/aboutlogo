@@ -18,34 +18,30 @@ const reasons = [
 
 export default function HomePage() {
   const reasonProof = portfolioProjects[5]
+  const heroProject = portfolioProjects[4]
 
   return (
     <>
       <section className="hero">
-        <div className="shell hero-grid">
+        <div className="shell hero-min">
           <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
-          <div className="hero-offer">
-            <span className="hero-label">แพ็กเกจโลโก้ + ชุด CI</span>
-            <strong className="hero-price">{service.priceLabel}</strong>
-            <p>
-              ออกแบบโลโก้ Corporate Identity และ Branding สำหรับธุรกิจที่พร้อมเติบโต
-              ในราคาที่เจ้าของแบรนด์เข้าถึงได้
+          <div className="hero-bar">
+            <p className="hero-offer-line">
+              <span className="hero-label">แพ็กเกจโลโก้ + ชุด CI</span>
+              <strong>{service.priceLabel}</strong>
             </p>
             <div className="button-row">
               <LineButton placement="hero" />
-              <Link className="text-link" href={servicePath}>ดูรายละเอียดแพ็กเกจ →</Link>
+              <Link className="text-link" href={servicePath}>ดูรายละเอียด →</Link>
             </div>
           </div>
         </div>
-        <ul className="hero-strip">
-          {portfolioProjects.slice(0, 5).map((project, index) => (
-            <li key={project.slug}>
-              <Link href={`/portfolio/${project.slug}`}>
-                <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill loading={index < 3 ? 'eager' : 'lazy'} preload={index < 3} sizes="(max-width: 640px) 60vw, 20vw" src={project.image} />
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <figure className="shell hero-figure story-figure">
+          <Link className="figure-frame" href={`/portfolio/${heroProject.slug}`}>
+            <Image alt={`ผลงานออกแบบแบรนด์ ${heroProject.title}`} fill loading="eager" preload sizes="100vw" src={heroProject.image} />
+          </Link>
+          <figcaption>ผลงาน {heroProject.title}</figcaption>
+        </figure>
       </section>
 
       <section className="section shell package" id="package">

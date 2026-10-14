@@ -29,7 +29,7 @@ export function Reveal() {
 
     // touch screens have no hover, so work images take their colour while they pass the middle of the screen
     const toned = window.matchMedia('(hover: none)').matches
-      ? Array.from(document.querySelectorAll<HTMLElement>('.hero-strip li, .project-card, .split-figure, .story-figure'))
+      ? Array.from(document.querySelectorAll<HTMLElement>('.project-card, .split-figure, .story-figure'))
       : []
     const tone = new IntersectionObserver(
       (entries) => entries.forEach((entry) => entry.target.classList.toggle('is-color', entry.isIntersecting)),
