@@ -18,32 +18,26 @@ const reasons = [
 
 export default function HomePage() {
   const reasonProof = portfolioProjects[5]
-  const heroProject = portfolioProjects[0]
 
   return (
     <>
       <section className="hero">
-        <div className="shell hero-min">
-          <div className="hero-copy">
-            <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
-            <div className="hero-bar">
-              <p className="hero-offer-line">
-                <span className="hero-label">แพ็กเกจโลโก้ + ชุด CI</span>
-                <strong>{service.priceLabel}</strong>
-              </p>
-              <div className="button-row">
-                <LineButton placement="hero" />
-                <Link className="text-link" href={servicePath}>ดูรายละเอียด →</Link>
-              </div>
-            </div>
+        <div className="shell hero-top">
+          <h1><span>โลโก้พร้อมชุด CI</span> <span>ครบในแพ็กเกจเดียว</span></h1>
+          <div className="hero-cta">
+            <strong>{service.priceLabel}</strong>
+            <LineButton placement="hero" />
           </div>
-          <figure className="hero-figure story-figure">
-            <Link className="figure-frame portrait" href={`/portfolio/${heroProject.slug}`}>
-              <Image alt={`ผลงานออกแบบแบรนด์ ${heroProject.title}`} fill loading="eager" preload sizes="(max-width: 960px) 100vw, 34vw" src={heroProject.image} />
-            </Link>
-            <figcaption>ผลงาน {heroProject.title}</figcaption>
-          </figure>
         </div>
+        <ul className="hero-strip">
+          {portfolioProjects.slice(0, 5).map((project, index) => (
+            <li key={project.slug}>
+              <Link href={`/portfolio/${project.slug}`}>
+                <Image alt={`ผลงานออกแบบแบรนด์ ${project.title}`} fill loading={index < 3 ? 'eager' : 'lazy'} preload={index < 3} sizes="(max-width: 640px) 62vw, (max-width: 960px) 34vw, 20vw" src={project.image} />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="section shell package" id="package">
