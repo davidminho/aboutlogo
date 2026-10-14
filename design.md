@@ -13,7 +13,7 @@ editorial
 
 ## Theme
 Shares its direction with loveluckybebe.com (Going Studio). Tokens live in `src/app/tokens.css`.
-- Ivory paper, linen bands, sand hairlines, taupe secondary text, warm ink. No chromatic accent.
+- Layout and type follow that project; the palette does not. Monochrome only: white paper, near-black ink, neutral greys.
 - Square corners, hairline rules, generous whitespace. One soft shadow, used only on the inset hero card.
 - Work images in listings sit in greyscale and ease into colour on hover (desktop) or mid-screen (touch). The hero and single-case images are full colour.
 

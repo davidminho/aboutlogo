@@ -1,26 +1,26 @@
 /* Hallmark · design tokens · aboutlogo.com · design-system: design.md */
 :root {
-  /* colour — shared with the Love Lucky Bebe direction: ivory, linen, sand, taupe, warm ink */
-  --color-paper: #FFFFFF;
-  --color-paper-2: #F3EDE6;
-  --color-rule: #E6DBCD;
-  --color-soft: #6B5F55;
-  --color-ink-2: #4A423B;
-  --color-ink: #1F1B18;
-  --color-accent: #A39687;
-  --color-accent-ink: #6B5F55;
+  /* colour — monochrome: white paper, near-black ink, neutral greys. No chromatic accent. */
+  --color-paper: oklch(99.4% 0.001 85);
+  --color-paper-2: oklch(96.8% 0.002 85);
+  --color-rule: oklch(89% 0.003 85);
+  --color-soft: oklch(55% 0.004 85);
+  --color-ink-2: oklch(40% 0.004 85);
+  --color-ink: oklch(18% 0.004 85);
+  --color-accent: oklch(70% 0.004 85);
+  --color-accent-ink: oklch(45% 0.004 85);
   --color-on-accent: oklch(17% 0.008 70);
-  --color-dark: #1F1B18;
-  --color-dark-2: #3A332E;
-  --color-on-dark: #FFFFFF;
-  --color-on-dark-2: #A39687;
-  --color-line: #1F1B18;
-  --color-line-hover: #3A332E;
-  --color-on-line: #FFFFFF;
+  --color-dark: oklch(15% 0.004 85);
+  --color-dark-2: oklch(27% 0.004 85);
+  --color-on-dark: oklch(96% 0.002 85);
+  --color-on-dark-2: oklch(70% 0.003 85);
+  --color-line: oklch(15% 0.004 85);
+  --color-line-hover: oklch(30% 0.004 85);
+  --color-on-line: oklch(99.4% 0.001 85);
   --color-focus: oklch(48% 0.12 255);
-  --color-glow: #E6DBCD;
-  --color-paper-glass: rgb(255 255 255 / 0.9);
-  --shadow-card: 0 18px 40px -16px rgb(31 27 24 / 0.28);
+  --color-glow: oklch(93% 0.002 85);
+  --color-paper-glass: oklch(99.4% 0.001 85 / 0.9);
+  --shadow-card: 0 18px 40px -16px oklch(18% 0.004 85 / 0.28);
   --shadow-soft: 0 1px 2px oklch(21% 0.01 70 / 0.05), 0 18px 40px -18px oklch(21% 0.01 70 / 0.18);
   --shadow-lift: 0 2px 4px oklch(21% 0.01 70 / 0.06), 0 28px 56px -20px oklch(21% 0.01 70 / 0.26);
   --color-scrim: oklch(17% 0.008 70 / 0.72);
