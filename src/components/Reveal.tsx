@@ -27,6 +27,16 @@ export function Reveal() {
     })
     root.classList.add('reveal-ready')
 
+    // touch screens have no hover, so work images take their colour while they pass the middle of the screen
+    const toned = window.matchMedia('(hover: none)').matches
+      ? Array.from(document.querySelectorAll<HTMLElement>('.hero-strip li, .project-card, .split-figure'))
+      : []
+    const tone = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.target.classList.toggle('is-color', entry.isIntersecting)),
+      { rootMargin: '-30% 0px -30% 0px' },
+    )
+    toned.forEach((element) => tone.observe(element))
+
     // anything at or above the reveal line is shown, so jumps and anchor links never leave content hidden
     let frame = 0
     const sweep = () => {
@@ -46,6 +56,8 @@ export function Reveal() {
     window.addEventListener('resize', onScroll)
 
     return () => {
+      tone.disconnect()
+      toned.forEach((element) => element.classList.remove('is-color'))
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
       if (frame) window.cancelAnimationFrame(frame)

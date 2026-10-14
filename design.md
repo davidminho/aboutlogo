@@ -11,15 +11,15 @@ editorial
 - Case, about, contact, legal: pale page head, one split below.
 
 ## Theme
-Custom. Tokens live in `src/app/tokens.css`.
-- White paper `--color-paper` throughout; pale `--color-paper-2` for alternating bands, tiles and page heads.
-- Dark ink `--color-dark` only for the footer and the logo tile.
-- Black, white and greys. Green appears only on the LINE action and as one swatch in the colour tile. The price and step numbers are ink black.
-- `--color-line` (LINE green, darkened for AA contrast with white text) is reserved for the LINE action.
+Quiet modern luxury. Tokens live in `src/app/tokens.css`.
+- Monochrome only: white paper, near-black ink, neutral greys. No chromatic accent anywhere, including the LINE action (black button, inverts on hover).
+- Square corners, hairline rules instead of filled cards, generous whitespace.
+- Colour comes only from client work. Work images sit in greyscale and ease into colour on hover (desktop) or while passing the middle of the screen (touch). The single-case page shows the image in full colour.
 
 ## Typography
 - Display and body: Helvetica Neue World (Adobe Fonts kit `hvh3vlm`), weights 400 and 700 only.
-- Headings are roman, 700, line-height 1.18. Price uses `--text-price`.
+- Display headings and the price are weight 400 with tight tracking. 700 is for h3, buttons and links.
+- Small labels are uppercase with wide tracking (`--tracking-label`).
 - No numbered eyebrows above section headings.
 
 ## Spacing
@@ -27,7 +27,7 @@ Custom. Tokens live in `src/app/tokens.css`.
 
 ## Motion
 - Hero and page heads rise in on load (staggered). Content below the fold rises in once as it reaches the viewport (`Reveal.tsx`); nothing loops or autoplays.
-- Motion is deliberately quiet: short fades with a few pixels of travel, no lifts, no shadows. Work thumbnails zoom very slightly on hover.
+- Motion is slow and quiet: fades with a few pixels of travel, no lifts, no shadows. The greyscale-to-colour change on work images takes about a second.
 - Header is sticky with a blurred translucent background. FAQ answers ease open where the browser supports it.
 - Easings `--ease-out`, `--ease-in`, `--ease-in-out`; reduced motion turns all of it off.
 
@@ -37,7 +37,6 @@ Custom. Tokens live in `src/app/tokens.css`.
 - Primary action: filled LINE button. Secondary: text link with accent underline.
 - Sticky LINE bar with price on small screens.
 - Package contents: bento tiles with CSS-drawn art, data from `src/lib/service.ts` (single source for home and service page).
-- Radius: `--radius-lg` on images, tiles and step cards.
 
 ## Copy rules
 - No invented metrics, reviews, team members, or case studies. Leave a section out until real data exists.

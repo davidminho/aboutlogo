@@ -1,25 +1,25 @@
 /* Hallmark · design tokens · aboutlogo.com · design-system: design.md */
 :root {
-  /* colour — white paper, warm-black ink, and one colour family: LINE green */
-  --color-paper: oklch(99.2% 0.002 85);
-  --color-paper-2: oklch(96.5% 0.005 85);
-  --color-rule: oklch(90% 0.006 85);
-  --color-soft: oklch(52% 0.012 80);
-  --color-ink-2: oklch(40% 0.012 75);
-  --color-ink: oklch(21% 0.01 70);
-  --color-accent: oklch(64% 0.17 150);
-  --color-accent-ink: oklch(44% 0.13 150);
+  /* colour — monochrome: white paper, near-black ink, neutral greys. No chromatic accent. */
+  --color-paper: oklch(99.4% 0.001 85);
+  --color-paper-2: oklch(96.8% 0.002 85);
+  --color-rule: oklch(89% 0.003 85);
+  --color-soft: oklch(55% 0.004 85);
+  --color-ink-2: oklch(40% 0.004 85);
+  --color-ink: oklch(18% 0.004 85);
+  --color-accent: oklch(70% 0.004 85);
+  --color-accent-ink: oklch(45% 0.004 85);
   --color-on-accent: oklch(17% 0.008 70);
-  --color-dark: oklch(17% 0.008 70);
-  --color-dark-2: oklch(27% 0.012 70);
-  --color-on-dark: oklch(95% 0.006 85);
-  --color-on-dark-2: oklch(74% 0.01 85);
-  --color-line: oklch(51% 0.16 150);
-  --color-line-hover: oklch(46% 0.15 150);
-  --color-on-line: oklch(99% 0.004 150);
+  --color-dark: oklch(15% 0.004 85);
+  --color-dark-2: oklch(27% 0.004 85);
+  --color-on-dark: oklch(96% 0.002 85);
+  --color-on-dark-2: oklch(70% 0.003 85);
+  --color-line: oklch(15% 0.004 85);
+  --color-line-hover: oklch(30% 0.004 85);
+  --color-on-line: oklch(99.4% 0.001 85);
   --color-focus: oklch(48% 0.12 255);
-  --color-glow: oklch(96.5% 0.022 150);
-  --color-paper-glass: oklch(99.2% 0.002 85 / 0.82);
+  --color-glow: oklch(93% 0.002 85);
+  --color-paper-glass: oklch(99.4% 0.001 85 / 0.86);
   --shadow-soft: 0 1px 2px oklch(21% 0.01 70 / 0.05), 0 18px 40px -18px oklch(21% 0.01 70 / 0.18);
   --shadow-lift: 0 2px 4px oklch(21% 0.01 70 / 0.06), 0 28px 56px -20px oklch(21% 0.01 70 / 0.26);
   --color-scrim: oklch(17% 0.008 70 / 0.72);
@@ -33,10 +33,11 @@
   --text-lg: 1.25rem;
   --text-xl: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
   --text-2xl: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
-  --text-display-s: clamp(2rem, 1.2rem + 3.4vw, 3.75rem);
-  --text-price: clamp(3.5rem, 1.5rem + 8vw, 7.5rem);
-  --text-display: clamp(2.5rem, 1.2rem + 5.2vw, 5.5rem);
-  --leading-display: 1.18;
+  --text-display-s: clamp(1.875rem, 1.2rem + 2.8vw, 3.25rem);
+  --text-price: clamp(3.25rem, 1.5rem + 7vw, 6.5rem);
+  --text-display: clamp(2.375rem, 1.2rem + 4.6vw, 5rem);
+  --leading-display: 1.2;
+  --tracking-label: 0.14em;
   --leading-body: 1.75;
 
   /* space — 4pt scale */
@@ -53,8 +54,8 @@
   --page-gutter: clamp(1rem, 4vw, 3rem);
   --shell: 78rem;
 
-  --radius-sm: 6px;
-  --radius-lg: 24px;
+  --radius-sm: 0px;
+  --radius-lg: 0px;
   --radius-pill: 999px;
   --rule-hair: 1px;
 
@@ -64,7 +65,8 @@
   --dur-micro: 120ms;
   --dur-short: 220ms;
   --dur-long: 420ms;
-  --dur-reveal: 500ms;
+  --dur-reveal: 700ms;
+  --dur-tone: 1100ms;
 
   --z-raised: 10;
   --z-dropdown: 100;
